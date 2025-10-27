@@ -1,1 +1,7 @@
-@use './assets/scss/functions';
+@use './styles/fonts';
+@use './assets/scss/functions' as *;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+

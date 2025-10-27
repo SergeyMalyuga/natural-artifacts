@@ -24,15 +24,14 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },         {
+              },
+              {
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"]
           },
           "configurations": {
             "production": {
@@ -84,12 +83,13 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "bd6c7a9a-a6c1-42da-a2ba-2d4b07649f74"
   }
 }
