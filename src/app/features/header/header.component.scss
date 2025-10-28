@@ -1,0 +1,75 @@
+@use '../../../styles/variables' as variables;
+@use '../../../assets/scss/functions' as *;
+
+.header-main {
+  background-color: variables.$bg-main-color;
+  padding: 18px 0;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    display: block;
+    margin: 0 clamp(3.125rem, 1.3377rem + 5.3957vw, 7.8125rem) 0 0;
+  }
+
+  &__navigation {
+    padding: 0;
+    margin: 0 clamp(5.0375rem, -3.957rem + 18.7142vw, 18.5rem) 0 0;
+  }
+
+  &__list {
+    display: flex;
+    gap: clamp(2rem, 1.2374rem + 2.3022vw, 4rem);;
+    list-style: none;
+    line-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    color: variables.$text-main-color;
+    text-decoration: none;
+
+    &:hover {
+      color: variables.$bg-accent-color;
+    }
+
+    &:active {
+      color: variables.$green-active;
+    }
+  }
+
+  &__search-img,
+  &__login-img {
+    display: block;
+    color: variables.$bg-accent-color;
+    &:hover {
+      color: variables.$green-hover;
+    }
+
+    &:active {
+      color: variables.$green-active;
+    }
+  }
+
+  &__search {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: clamp(2rem, 1.2374rem + 2.3022vw, 4rem);
+
+    img {
+      display: block;
+    }
+  }
+}
