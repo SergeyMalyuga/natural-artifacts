@@ -1,0 +1,68 @@
+@use '../../../styles/variables' as variables;
+@use '../../../assets/scss/functions' as *;
+
+.hero {
+  position: relative;
+  padding-bottom: clamp(1.875rem, 0.8125rem + 5.3125vw, 7.1875rem);
+  padding-top: clamp(4.3125rem, 2.9875rem + 6.625vw, 10.9375rem);
+  background-image: url("../../../assets/images/hero-photo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+
+  &__content {
+    margin: 0 auto;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    background: variables.$bg-main-color;
+    opacity: 0.7;
+    z-index: -1;
+  }
+
+  &__title {
+    font-family: variables.$font-family-secondary;
+    font-style: normal;
+    font-size: clamp(3rem, 2.4989rem + 1.0426vw, 3.75rem);
+    max-width: clamp(16rem, -3.2857rem + 96.4286vw, 43rem);
+    width: 100%;
+    font-weight: 700;
+    line-height: clamp(3.625rem, 2.9986rem + 1.3032vw, 4.5625rem);
+    letter-spacing: 0;
+    text-align: left;
+    margin: 0 0 16px;
+  }
+
+  &__text {
+    margin: 0 0 24px;
+    width: 688px;
+
+    @media (width <= 763px) {
+      display: none;
+    }
+  }
+
+  &__link {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    text-decoration: none;
+    color: variables.$bg-accent-color;
+
+
+    &::after {
+      content: "";
+      display: block;
+      width: 44px;
+      height: 13px;
+      background-image: url("../../../assets/images/hero-arrow.svg");
+    }
+  }
+}
