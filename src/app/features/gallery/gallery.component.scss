@@ -1,0 +1,69 @@
+@use '../../../assets/scss/functions' as *;
+@use '../../../styles/variables' as variables;
+
+.gallery {
+  background-color: variables.$bg-main-color;
+
+  &__content {
+    margin: 0 auto;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 32px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    max-width: 253px;
+    width: 100%;
+
+    &-number {
+      display: flex;
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      align-items: center;
+      justify-content: center;
+      line-height: 18.4px;
+      font-family: variables.$font-family-secondary;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid variables.$grey;
+      color: variables.$grey;
+    }
+
+    &-content {
+      border: 1px solid variables.$bg-card-image;
+      padding: 16px 16px 24px;
+    }
+
+    &-title {
+      font-family: variables.$font-family-secondary;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+      letter-spacing: 0;
+      text-align: left;
+      margin: 0;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    padding: 30px 15px;
+    background-color: variables.$bg-card-image;
+    height: 180px;
+  }
+}
