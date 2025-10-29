@@ -4,7 +4,7 @@
 .hero {
   position: relative;
   padding-bottom: clamp(1.875rem, 0.8125rem + 5.3125vw, 7.1875rem);
-  padding-top: clamp(4.3125rem, 2.9875rem + 6.625vw, 10.9375rem);
+  padding-top: clamp(1.875rem, 0.8125rem + 5.3125vw, 7.1875rem);
   background-image: url("../../../assets/images/hero-photo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,7 +34,7 @@
     max-width: clamp(16rem, -3.2857rem + 96.4286vw, 43rem);
     width: 100%;
     font-weight: 700;
-    line-height: clamp(3.625rem, 2.9986rem + 1.3032vw, 4.5625rem);
+    line-height: 105%;
     letter-spacing: 0;
     text-align: left;
     margin: 0 0 16px;
@@ -43,6 +43,7 @@
   &__text {
     margin: 0 0 24px;
     width: 688px;
+    line-height: 24px;
 
     @media (width <= 763px) {
       display: none;
@@ -51,18 +52,46 @@
 
   &__link {
     display: flex;
+    width: fit-content;
     gap: 8px;
     align-items: center;
     text-decoration: none;
     color: variables.$bg-accent-color;
 
+    &:focus {
+      outline: none;
+
+      &-visible {
+        outline: 1px solid variables.$green-focus;
+      }
+    }
+
+    &:hover {
+      color: variables.$green-hover;
+
+      &::after {
+        background-color: variables.$green-hover;
+      }
+    }
+
+    &:active {
+      color: variables.$green-active;
+
+      &::after {
+        background-color: variables.$green-active;
+      }
+    }
 
     &::after {
       content: "";
-      display: block;
+      display: inline-block;
       width: 44px;
       height: 13px;
-      background-image: url("../../../assets/images/hero-arrow.svg");
+      background-color: variables.$bg-accent-color;;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 44.0041 13.3219' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='44.004089' height='13.321899' customFrame='%23000000'%3E%3Cpath id='Arrow 1' d='M0 5.66095L43 5.66095L43 7.66095L0 7.66095L0 5.66095ZM41.5858 6.66095L36.636 1.7112C36.2401 1.31522 36.2401 0.69297 36.636 0.296988C37.032 -0.0989933 37.6543 -0.0989923 38.0503 0.296988L43.7071 5.95384C44.1031 6.34982 44.1031 6.97208 43.7071 7.36806L38.0503 13.0249C37.6543 13.4209 37.032 13.4209 36.636 13.0249C36.2401 12.6289 36.2401 12.0067 36.636 11.6107L41.5858 6.66095Z'/%3E%3C/svg%3E");
     }
   }
 }
