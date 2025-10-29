@@ -10,16 +10,21 @@
 
   img {
     display: block;
-    width: 100%;
+    max-width: 100%;
     height: auto;
   }
 
   &__list {
     list-style: none;
+    overflow: hidden;
     padding: 0;
     margin: 0;
     display: flex;
     gap: 32px;
+  }
+
+  &__item {
+    flex-shrink: 0;
   }
 
   &__card {
@@ -51,6 +56,7 @@
 
     &-title {
       font-family: variables.$font-family-secondary;
+      font-style: normal;
       font-size: 24px;
       font-weight: 700;
       line-height: 29px;
@@ -62,6 +68,8 @@
 
   &__image-wrapper {
     position: relative;
+    display: flex;
+    align-items: center;
     padding: 30px 15px;
     background-color: variables.$bg-card-image;
     height: 180px;
