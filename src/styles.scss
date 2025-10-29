@@ -1,6 +1,13 @@
 @use './styles/variables' as *;
 @use './styles/fonts';
 @use './assets/scss/functions' as *;
+@import "../node_modules/swiper/swiper.css";
+@import "../node_modules/swiper/modules/navigation.css";
+@import "../node_modules/swiper/modules/autoplay.css";
+@import "../node_modules/swiper/modules/a11y-element.css";
+//@import "../node_modules/swiper/modules/controller.css";
+
+
 
 *,
 *::before,
