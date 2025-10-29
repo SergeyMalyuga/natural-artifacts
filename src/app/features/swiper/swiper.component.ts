@@ -2,7 +2,7 @@ import {AfterViewInit, Component, ElementRef, OnDestroy} from '@angular/core';
 import Swiper from 'swiper';
 import { Autoplay, Pagination, Navigation, EffectFlip } from 'swiper/modules';
 
-Swiper.use([Autoplay, Pagination, Navigation, EffectFlip]);
+
 @Component({
   selector: 'app-swiper',
   templateUrl: 'swiper.component.html',
@@ -25,7 +25,7 @@ export class SwiperComponent implements AfterViewInit, OnDestroy {
 
     this.swiper = new Swiper( swiperElement, {
       modules: [Autoplay, Pagination, Navigation, EffectFlip],
-      slidesPerView: 1,
+      slidesPerView: "auto",
       spaceBetween: 30,
       autoplay: {
         delay: 3000
@@ -40,10 +40,10 @@ export class SwiperComponent implements AfterViewInit, OnDestroy {
         prevEl: '.swiper-button-prev',
       },
       breakpoints: {
-        320: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1023: { slidesPerView: 3 },
-        1920: { slidesPerView: 4 }
+        0: { slidesPerView: 1 },
+        576: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        1023: { slidesPerView: 4 },
       },
     });
   }
