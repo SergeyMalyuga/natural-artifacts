@@ -30,10 +30,7 @@
   &__card {
     display: flex;
     flex-direction: column;
-    /*
-    max-width: 253px;
-    width: 100%;
-    */
+    height: 100%;
 
     &-number {
       display: flex;
@@ -52,8 +49,11 @@
     }
 
     &-content {
+      display: flex;
+      flex-direction: column;
       border: 1px solid variables.$bg-card-image;
-      padding: 16px 16px 24px;
+      padding: 16px 15px 24px;
+      flex: 1;
     }
 
     &-title {
@@ -64,7 +64,50 @@
       line-height: 29px;
       letter-spacing: 0;
       text-align: left;
-      margin: 0;
+      margin: 0 0 8px;
+    }
+
+    &-text {
+      color: variables.$grey;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 0;
+      text-align: left;
+      margin: 0 0 16px;
+    }
+
+    &-button {
+      border: 1px solid variables.$bg-accent-color;
+      background-color: transparent;
+      color: variables.$bg-accent-color;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 0;
+      text-align: center;
+      padding: 10.5px 28.5px;
+      width: 145px;
+      margin-top: auto;
+
+      &:hover {
+        background-color: variables.$bg-accent-color;
+        color: variables.$bg-footer-color;
+      }
+
+      &:active {
+        background-color: variables.$green-active;
+        color: variables.$bg-footer-color;
+      }
+
+      &:focus {
+        outline: none;
+
+        &-visible {
+          outline: 1px solid variables.$bg-accent-color;
+          outline-offset: 3px;
+        }
+      }
     }
   }
 
