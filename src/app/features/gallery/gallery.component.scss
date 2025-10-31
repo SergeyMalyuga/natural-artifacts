@@ -3,6 +3,8 @@
 
 .gallery {
   background-color: variables.$bg-main-color;
+  box-shadow: 0 57px 0 variables.$bg-main-color;
+  margin-bottom: 57px;
 
   &__content {
     margin: 0 auto;

@@ -1,0 +1,120 @@
+@use '../../../styles/variables';
+@use '../../../assets/scss/functions';
+
+.about {
+  background-color: variables.$bg-main-color;
+
+  &__content {
+    margin: 0 auto;
+    padding-bottom: 60px;
+
+    &-title {
+      color: variables.$bg-main-color;
+      font-family: variables.$font-family-secondary;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+      letter-spacing: 0;
+      margin: 0 0 8px;
+    }
+
+    &-text {
+      color: variables.$text-secondary-color;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 0;
+      margin: 0 0 75px;
+
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+
+    &-link {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      text-decoration: none;
+      color: variables.$bg-footer-color;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 100%;
+      letter-spacing: 0;
+      margin-top: auto;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 44px;
+        height: 13px;
+        mask-image: url('../../../assets/images/about-arrow.svg');
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: cover;
+        background-color: variables.$bg-footer-color;
+      }
+
+      &:hover {
+        color: variables.$green-active;
+
+        &::after {
+          background-color: variables.$green-active;
+        }
+      }
+
+      &:active {
+        color: variables.$bg-footer-color;
+
+        &::after {
+          background-color: variables.$bg-footer-color;
+        }
+      }
+
+      &:focus {
+        outline: none;
+
+        &-visible {
+          outline: 1px solid variables.$green-focus;
+          outline-offset: 5px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-family: variables.$font-family-secondary;
+    font-style: italic;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 58px;
+    letter-spacing: 0;
+    text-align: left;
+    margin: 0 0 30px;
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__image-wrapper {
+    max-width: 825px;
+    width: 100%;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 16px 24px;
+    background-color: variables.$bg-accent-color;
+    max-width: 254px;
+    width: 100%;
+  }
+}

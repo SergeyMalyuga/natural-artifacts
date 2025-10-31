@@ -2,9 +2,7 @@
 @use './styles/fonts';
 @use './assets/scss/functions' as *;
 @import '../node_modules/swiper/swiper.css';
-//@import "../node_modules/swiper/modules/navigation.css";
 @import '../node_modules/swiper/modules/autoplay.css';
-//@import "../node_modules/swiper/modules/a11y-element.css";
 
 *,
 *::before,
@@ -43,4 +41,15 @@ button.gallery__button-next.swiper-button-disabled {
   pointer-events: none;
   cursor: not-allowed;
   opacity: 0.5;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
 }
