@@ -1,38 +1,43 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  OnDestroy,
+  Output,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 import Swiper from 'swiper';
 import { Autoplay, Pagination, Navigation, EffectFlip } from 'swiper/modules';
-
 
 @Component({
   selector: 'app-swiper',
   templateUrl: 'swiper.component.html',
-  styleUrl: 'swiper.component.scss'
+  styleUrl: 'swiper.component.scss',
 })
 export class SwiperComponent implements AfterViewInit, OnDestroy {
+  @Output() slideChanged = new EventEmitter<number>();
+
   private swiper!: Swiper;
 
   constructor(private el: ElementRef) {}
 
   ngOnDestroy(): void {
-        if(this.swiper) {
-          this.swiper.destroy();
-        }
+    if (this.swiper) {
+      this.swiper.destroy();
     }
+  }
 
   ngAfterViewInit() {
-
     const swiperElement = this.el.nativeElement.querySelector('.swiper');
 
-    this.swiper = new Swiper( swiperElement, {
+    this.swiper = new Swiper(swiperElement, {
       modules: [Autoplay, Pagination, Navigation, EffectFlip],
-      slidesPerView: "auto",
+      slidesPerView: 'auto',
       spaceBetween: 30,
       autoplay: {
-        delay: 3000
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+        delay: 3000,
       },
       navigation: {
         addIcons: false,
@@ -45,7 +50,11 @@ export class SwiperComponent implements AfterViewInit, OnDestroy {
         768: { slidesPerView: 3 },
         1023: { slidesPerView: 4 },
       },
+      on: {
+        slideChange: (swiper) => {
+          this.slideChanged.emit(swiper.activeIndex + 1);
+        },
+      },
     });
   }
 }
-

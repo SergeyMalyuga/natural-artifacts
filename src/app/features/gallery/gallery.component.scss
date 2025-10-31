@@ -119,4 +119,62 @@
     background-color: variables.$bg-card-image;
     height: 180px;
   }
+
+  &__slider-control {
+    display: flex;
+    gap: 37.5px;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  &__button-next {
+    border: none;
+    width: 25px;
+    height: 20px;
+    background-color: variables.$grey;
+    mask-image: url("../../../assets/images/gallery-arrow-right.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    &:hover {
+      background-color: variables.$bg-accent-color;
+    }
+
+    &:active {
+      background-color: variables.$green-active;
+    }
+  }
+
+  &__button-prev {
+    border: none;
+    width: 25px;
+    height: 20px;
+    background-color: variables.$grey;
+    mask-image: url("../../../assets/images/gallery-arrow-left.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    &:hover {
+      background-color: variables.$bg-accent-color;
+    }
+
+    &:active {
+      background-color: variables.$green-active;
+    }
+  }
+
+  &__pagination {
+    font-family: variables.$font-family-secondary;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0;
+  }
 }
+
+.p {
+  display: flex;
+  align-items: center;
+}
+
