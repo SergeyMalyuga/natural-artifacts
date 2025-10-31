@@ -7,6 +7,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './hero.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeroComponent {
-
-}
+export class HeroComponent {}

@@ -5,7 +5,7 @@
   position: relative;
   padding-bottom: clamp(1.875rem, 0.8125rem + 5.3125vw, 7.1875rem);
   padding-top: clamp(1.875rem, 0.8125rem + 5.3125vw, 7.1875rem);
-  background-image: url("../../../assets/images/hero-photo.jpg");
+  background-image: url('../../../assets/images/hero-photo.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 1;
@@ -15,7 +15,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     width: 100%;
@@ -83,11 +83,11 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       display: inline-block;
       width: 44px;
       height: 13px;
-      background-color: variables.$bg-accent-color;;
+      background-color: variables.$bg-accent-color;
       mask-repeat: no-repeat;
       mask-position: center;
       mask-size: contain;

@@ -1,9 +1,9 @@
 @use './styles/variables' as *;
 @use './styles/fonts';
 @use './assets/scss/functions' as *;
-@import "../node_modules/swiper/swiper.css";
+@import '../node_modules/swiper/swiper.css';
 //@import "../node_modules/swiper/modules/navigation.css";
-@import "../node_modules/swiper/modules/autoplay.css";
+@import '../node_modules/swiper/modules/autoplay.css';
 //@import "../node_modules/swiper/modules/a11y-element.css";
 
 *,
@@ -38,9 +38,9 @@ button {
   cursor: pointer;
 }
 
-button.gallery__button-prev.swiper-button-disabled, button.gallery__button-next.swiper-button-disabled {
+button.gallery__button-prev.swiper-button-disabled,
+button.gallery__button-next.swiper-button-disabled {
   pointer-events: none;
   cursor: not-allowed;
   opacity: 0.5;
 }
-

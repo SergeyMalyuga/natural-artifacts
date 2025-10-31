@@ -5,11 +5,9 @@ import {
   EventEmitter,
   OnDestroy,
   Output,
-  signal,
-  WritableSignal,
 } from '@angular/core';
 import Swiper from 'swiper';
-import { Autoplay, Pagination, Navigation, EffectFlip } from 'swiper/modules';
+import { Autoplay, EffectFlip, Navigation, Pagination } from 'swiper/modules';
 
 @Component({
   selector: 'app-swiper',
@@ -38,6 +36,7 @@ export class SwiperComponent implements AfterViewInit, OnDestroy {
       spaceBetween: 30,
       autoplay: {
         delay: 3000,
+        pauseOnMouseEnter: true,
       },
       navigation: {
         addIcons: false,

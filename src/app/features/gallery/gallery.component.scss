@@ -125,7 +125,6 @@
     gap: 37.5px;
     align-items: center;
     justify-content: center;
-
   }
 
   &__button-next {
@@ -133,7 +132,7 @@
     width: 25px;
     height: 20px;
     background-color: variables.$grey;
-    mask-image: url("../../../assets/images/gallery-arrow-right.svg");
+    mask-image: url('../../../assets/images/gallery-arrow-right.svg');
     mask-repeat: no-repeat;
     mask-position: center;
 
@@ -151,7 +150,7 @@
     width: 25px;
     height: 20px;
     background-color: variables.$grey;
-    mask-image: url("../../../assets/images/gallery-arrow-left.svg");
+    mask-image: url('../../../assets/images/gallery-arrow-left.svg');
     mask-repeat: no-repeat;
     mask-position: center;
 
@@ -177,4 +176,3 @@
   display: flex;
   align-items: center;
 }
-
