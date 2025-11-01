@@ -1,0 +1,21 @@
+<section class="contact">
+  <div class="contact__content container">
+    <h2 class="contact__title">Помочь проекту</h2>
+    <p class="contact__text">Равным образом, экономическая повестка сегодняшнего дня не даёт нам иного выбора, кроме
+      определения прогресса
+      профессионального сообщества. Как принято считать, элементы политического процесса рассмотрены исключительно в
+      разрезе маркетинговых и финансовых предпосылок. </p>
+    <form [formGroup]="contactForm" class="contact__form">
+      @if (contactForm.get('name')?.errors?.['pattern']) {
+        <div class="contact__error">
+          <small>Недопустимый формат</small>
+        </div>
+      }
+      <label class="visually-hidden" for="name">Имя</label>
+      <input formControlName="name" id="name" class="contact__name" [class.contact__name--error]="contactForm.get('name')?.errors?.['pattern']" type="text" placeholder="Имя" />
+      <label class="visually-hidden" for="email">Электронная почта</label>
+      <input id="email" class="contact__email" type="email" placeholder="Email" />
+      <button class="contact__submit">Отправить</button>
+    </form>
+  </div>
+</section>

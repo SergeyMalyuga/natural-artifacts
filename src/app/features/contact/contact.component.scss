@@ -1,0 +1,111 @@
+@use '../../../styles/variables';
+@use '../../../assets/scss/functions';
+
+.contact {
+  background-color: variables.$bg-main-color;
+
+  &__content {
+    margin: 0 auto;
+    padding: 60px 0 60px;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-family: variables.$font-family-secondary;
+    font-style: italic;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 58px;
+    letter-spacing: 0;
+    text-align: left;
+  }
+
+  &__text {
+    max-width: 825px;
+    width: 100%;
+    margin: 0 0 24px;
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+
+    input {
+      max-width: 350px;
+      width: 100%;
+      line-height: 180%;
+      border: none;
+      background-color: variables.$text-main-color;
+      padding: 10.5px 16px 10.5px;
+      cursor: pointer;
+
+      &::placeholder {
+        color: variables.$grey;
+      }
+
+      &:hover {
+        background-color: variables.$grey;
+
+        &::placeholder {
+          color: variables.$text-main-color;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        
+        &-visible {
+          outline: 1px solid variables.$green-focus;
+          outline-offset: 2px;
+        }
+      }
+
+      &:active::placeholder {
+        color: variables.$bg-footer-color;
+      }
+    }
+  }
+
+  &__submit {
+    max-width: 145px;
+    width: 100%;
+    background-color: variables.$bg-accent-color;
+    color: variables.$bg-footer-color;
+    font-weight: 700;
+    line-height: 165%;
+    letter-spacing: 0;
+    text-align: center;
+    padding: 11.5px 26px;
+    border: none;
+
+    &:hover {
+      background-color: variables.$green-hover;
+    }
+
+    &:active {
+      background-color: variables.$green-active;
+    }
+
+    &:focus {
+      outline: none;
+
+      &-visible {
+        outline: 1px solid variables.$green-focus;
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  &__error {
+    position: absolute;
+    color: rgba(226, 73, 73, 1);
+    left: 0;
+    top: -22px
+  }
+
+  &__name--error {
+    outline: 1px solid rgba(226, 73, 73, 1);
+  }
+}
