@@ -18,6 +18,7 @@ export class SwiperComponent implements AfterViewInit, OnDestroy {
   @Output() slideChanged = new EventEmitter<number>();
 
   private swiper!: Swiper;
+  private visiblyAmountSlides = 0;
 
   constructor(private el: ElementRef) {}
 
@@ -50,8 +51,13 @@ export class SwiperComponent implements AfterViewInit, OnDestroy {
         1023: { slidesPerView: 4 },
       },
       on: {
-        slideChange: (swiper) => {
+        slideChange: (swiper) => { //TODO доработать отображение количества общих слайдов
           this.slideChanged.emit(swiper.activeIndex + 1);
+          if(this.visiblyAmountSlides !== Number(swiper.params.slidesPerGroup)) {
+            console.log(this.visiblyAmountSlides);
+            console.log(swiper.params.slidesPerView);
+            this.visiblyAmountSlides = Number(swiper.params.slidesPerGroup);
+          }
         },
       },
     });
