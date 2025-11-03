@@ -10,7 +10,7 @@
   background-size: cover;
   z-index: 1;
 
-  @media (width <= 768px) {
+  @media (width <= 789px) {
     padding-top: 69px;
     padding-bottom: 30px;
   }
@@ -44,7 +44,7 @@
     text-align: left;
     margin: 0 0 16px;
 
-    @media (width <= 768px) {
+    @media (width <= 789px) {
       margin-bottom: 30px;
     }
   }
@@ -54,7 +54,7 @@
     width: 688px;
     line-height: 24px;
 
-    @media (width <= 768px) {
+    @media (width <= 789px) {
       display: none;
     }
   }
@@ -75,6 +75,18 @@
       }
     }
 
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 44px;
+      height: 13px;
+      background-color: variables.$bg-accent-color;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 44.0041 13.3219' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='44.004089' height='13.321899' customFrame='%23000000'%3E%3Cpath id='Arrow 1' d='M0 5.66095L43 5.66095L43 7.66095L0 7.66095L0 5.66095ZM41.5858 6.66095L36.636 1.7112C36.2401 1.31522 36.2401 0.69297 36.636 0.296988C37.032 -0.0989933 37.6543 -0.0989923 38.0503 0.296988L43.7071 5.95384C44.1031 6.34982 44.1031 6.97208 43.7071 7.36806L38.0503 13.0249C37.6543 13.4209 37.032 13.4209 36.636 13.0249C36.2401 12.6289 36.2401 12.0067 36.636 11.6107L41.5858 6.66095Z'/%3E%3C/svg%3E");
+    }
+
     &:hover {
       color: variables.$green-hover;
 
@@ -89,18 +101,6 @@
       &::after {
         background-color: variables.$green-active;
       }
-    }
-
-    &::after {
-      content: '';
-      display: inline-block;
-      width: 44px;
-      height: 13px;
-      background-color: variables.$bg-accent-color;
-      mask-repeat: no-repeat;
-      mask-position: center;
-      mask-size: contain;
-      mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 44.0041 13.3219' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='44.004089' height='13.321899' customFrame='%23000000'%3E%3Cpath id='Arrow 1' d='M0 5.66095L43 5.66095L43 7.66095L0 7.66095L0 5.66095ZM41.5858 6.66095L36.636 1.7112C36.2401 1.31522 36.2401 0.69297 36.636 0.296988C37.032 -0.0989933 37.6543 -0.0989923 38.0503 0.296988L43.7071 5.95384C44.1031 6.34982 44.1031 6.97208 43.7071 7.36806L38.0503 13.0249C37.6543 13.4209 37.032 13.4209 36.636 13.0249C36.2401 12.6289 36.2401 12.0067 36.636 11.6107L41.5858 6.66095Z'/%3E%3C/svg%3E");
     }
   }
 }
