@@ -1,7 +1,7 @@
 <section class="gallery">
   <h2 class="visually-hidden">Галлерея</h2>
   <div class="gallery__content container">
-    <app-swiper (slideChanged)="onSlideChanged($event)">
+    <app-swiper (slideChanged)="onSlideChanged($event)" (totalSlideChanged)="onTotalAmountSlideChanged($event)">
       <div class="swiper-slide gallery-slider" style="height: auto">
         <article class="gallery__card">
           <div class="gallery__image-wrapper">
@@ -190,7 +190,7 @@
       <div class="swiper-pagination">
         <span class="gallery__pagination">{{ currentSlide() }} </span>
         <span class="gallery__pagination">из</span>
-        <span class="gallery__pagination"> 5</span>
+        <span class="gallery__pagination"> {{totalAmountSlide()}}</span>
       </div>
       <button class="swiper-button-next gallery__button-next"></button>
     </div>

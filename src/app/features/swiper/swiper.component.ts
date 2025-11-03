@@ -4,7 +4,7 @@ import {
   ElementRef,
   EventEmitter,
   OnDestroy,
-  Output,
+  Output, signal, WritableSignal,
 } from '@angular/core';
 import Swiper from 'swiper';
 import { Autoplay, EffectFlip, Navigation, Pagination } from 'swiper/modules';
@@ -16,9 +16,11 @@ import { Autoplay, EffectFlip, Navigation, Pagination } from 'swiper/modules';
 })
 export class SwiperComponent implements AfterViewInit, OnDestroy {
   @Output() slideChanged = new EventEmitter<number>();
+  @Output() totalSlideChanged = new EventEmitter<number>();
 
   private swiper!: Swiper;
-  private visiblyAmountSlides = 0;
+  private totalAmountSlides: WritableSignal<number> = signal<number>(0);
+  private visiblySlides: WritableSignal<number> = signal<number>(0);
 
   constructor(private el: ElementRef) {}
 
@@ -51,14 +53,18 @@ export class SwiperComponent implements AfterViewInit, OnDestroy {
         1023: { slidesPerView: 4 },
       },
       on: {
-        slideChange: (swiper) => { //TODO доработать отображение количества общих слайдов
+        init: (swiper) => {
+          this.totalAmountSlides.set(Number(swiper.slides.length) - Number(swiper.params.slidesPerView) + 1)
+          this.visiblySlides.set(Number(swiper.params.slidesPerView));
+          this.totalSlideChanged.emit(this.totalAmountSlides())},
+        slideChange: (swiper) => {
           this.slideChanged.emit(swiper.activeIndex + 1);
-          if(this.visiblyAmountSlides !== Number(swiper.params.slidesPerGroup)) {
-            console.log(this.visiblyAmountSlides);
-            console.log(swiper.params.slidesPerView);
-            this.visiblyAmountSlides = Number(swiper.params.slidesPerGroup);
-          }
         },
+        resize: (swiper) => {
+          this.visiblySlides.set(Number(swiper.params.slidesPerView))
+          this.totalAmountSlides.set(Number(swiper.slides.length) - Number(swiper.params.slidesPerView) + 1);
+          this.totalSlideChanged.emit(Number(this.totalAmountSlides()));
+        }
       },
     });
   }
