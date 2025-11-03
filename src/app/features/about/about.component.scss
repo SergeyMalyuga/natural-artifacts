@@ -96,6 +96,10 @@
   &__wrapper {
     display: flex;
     gap: 30px;
+
+    @media (width <= 768px) {
+      flex-direction: column;
+    }
   }
 
   &__image-wrapper {
@@ -116,5 +120,9 @@
     background-color: variables.$bg-accent-color;
     max-width: 254px;
     width: 100%;
+
+    @media (width <= 768px) {
+      max-width: 100%;
+    }
   }
 }

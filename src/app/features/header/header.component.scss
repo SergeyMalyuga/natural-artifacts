@@ -50,6 +50,10 @@
       bottom: -40px;
       z-index: 1000;
     }
+
+    @media (width <= 450px) {
+      display: none;
+    }
   }
 
   &__list {
